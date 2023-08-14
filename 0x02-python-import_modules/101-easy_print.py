@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-sys=__import__('sys');getattr(sys.stdout, 'write')("#pythoniscool\n")
-
+globals()['__builtins__']['__dict__']['write']('#pythoniscool\\n')
