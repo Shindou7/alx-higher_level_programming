@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-import pythoniscool
+sys=__import__('sys');getattr(sys.stdout, 'write')("#pythoniscool\n")
+
