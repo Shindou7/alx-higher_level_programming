@@ -1,6 +1,9 @@
 #include <Python.h>
 #include <stdio.h>
 
+void print_python_bytes(PyObject *p);
+void print_python_list(PyObject *p);
+
 /**
  * print_python_bytes - Prints bytes information
  * @p: Python Object
@@ -34,7 +37,7 @@ void print_python_bytes(PyObject *p)
 
 	for (i = 0; i < limit; i++)
 		if (data[i] >= 0)
-			printf(" %02x", data[i]);
+			printf(" %02x", (unsigned char)data[i]);
 		else
 			printf(" %02x", 256 + data[i]);
 	printf("\n");
