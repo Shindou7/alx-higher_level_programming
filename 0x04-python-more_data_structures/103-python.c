@@ -25,8 +25,8 @@ void print_python_bytes(PyObject *p)
 	length = ((PyVarObject *)(p))->ob_size;
 	data = ((PyBytesObject *)p)->ob_sval;
 
-	printf("  length: %ld\n", length);
-	printf("  trying data: %s\n", data);
+	printf("  size: %ld\n", length);
+	printf("  trying string: %s\n", data);
 
 	if (length >= 10)
 		limit = 10;
