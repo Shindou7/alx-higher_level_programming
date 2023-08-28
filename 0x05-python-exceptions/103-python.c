@@ -34,7 +34,8 @@ void print_hexn(const char *str, int n)
 void print_python_bytes(PyObject *p)
 {
 	PyBytesObject *bytesObj = (PyBytesObject *)p;
-	int size = PyBytes_Size(p);
+	Py_ssize_t size = PyBytes_Size(p);
+	const char *data = PyBytes_AsString(p);
 
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
@@ -42,10 +43,10 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	printf("  size: %d\n", size);
-	printf("  trying string: %s\n", bytesObj->ob_sval);
-	printf("  first %d bytes: ", size <= 10 ? size : 10);
-	print_hexn(bytesObj->ob_sval, size <= 10 ? size : 10);
+	printf("  size: %ld\n", size);
+	printf("  trying string: %s\n",data);
+	printf("  first %ld bytes: ", size <= 10 ? size : 10);
+	print_hexn(data, size <= 10 ? size : 10);
 	fflush(stdout);
 }
 /**
@@ -71,7 +72,7 @@ void print_python_list(PyObject *p)
 	{
 		PyObject *item = PyList_GetItem(p, i);
 
-		typeName = item->ob_type->tp_name;
+		typeName = Py_TYPE(item)->tp_name;
 
 		printf("Element %d: %s\n", i, typeName);
 
@@ -89,8 +90,7 @@ void print_python_list(PyObject *p)
 
 void print_python_float(PyObject *p)
 {
-	PyFloatObject *Obj = (PyFloatObject *)p;
-	double value;
+	double value = PyFloat_AS_DOUBLE(p);
 
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
@@ -98,7 +98,7 @@ void print_python_float(PyObject *p)
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	value = Obj->ob_fval;
+	/**value = Obj->ob_fval;*/
 	printf("  value: %0.16g\n", value);
 	fflush(stdout);
 }
