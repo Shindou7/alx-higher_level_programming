@@ -64,8 +64,8 @@ void print_python_list(PyObject *p)
 		printf("  [ERROR] Invalid List Object\n");
 		return;
 	}
-	printf("[*] Size of the Python List = %d\n", listLen);
-	printf("[*] Allocated = %d\n", ((PyListObject *)p)->allocated);
+	printf("[*] Size of the Python List = %ld\n", listLen);
+	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 
 	for (i = 0; i < listLen; ++i)
 	{
@@ -90,7 +90,6 @@ void print_python_list(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	PyFloatObject *Obj = (PyFloatObject *)p;
-	float Obj;
 	double value;
 
 	printf("[.] float object info\n");
