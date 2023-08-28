@@ -54,7 +54,7 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-	int listLen = PyList_Size(p);
+	Py_ssize_t listLen = PyList_Size(p);
 	int i;
 	const char *typeName;
 
@@ -64,8 +64,8 @@ void print_python_list(PyObject *p)
 		printf("  [ERROR] Invalid List Object\n");
 		return;
 	}
-	printf("[*] Size of the Python List = %ld\n", listLen);
-	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
+	printf("[*] Size of the Python List = %ld\n", (long)listLen);
+	printf("[*] Allocated = %ld\n", (long)((PyListObject *)p)->allocated);
 
 	for (i = 0; i < listLen; ++i)
 	{
