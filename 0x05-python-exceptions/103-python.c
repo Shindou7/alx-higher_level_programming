@@ -33,7 +33,6 @@ void print_hexn(const char *str, int n)
  */
 void print_python_bytes(PyObject *p)
 {
-	PyBytesObject *bytesObj = (PyBytesObject *)p;
 	Py_ssize_t size = PyBytes_Size(p);
 	const char *data = PyBytes_AsString(p);
 
