@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 "4-square.py"
 
+
 class Square:
-    """class Square
-    """
+
+    """class Square"""
 
     def __init__(self, size=0):
         """square def init
@@ -14,7 +15,6 @@ class Square:
         """class area
         """
         return self.__size ** 2
-
 
     @property
     def size(self):
