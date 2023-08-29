@@ -2,7 +2,7 @@
 
 class Square:
     """6-square.py"""
-    
+
     def __init__(self, size=0, position=(0, 0)):
     """ class init."""
         if type(size) is not int:
@@ -79,7 +79,7 @@ class Square:
         if self.__size == 0:
             print()
             return None
-        
+
         if self.__position[1] > 0:
             for i in range(self.__position[1]):
                 print('')
