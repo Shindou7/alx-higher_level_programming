@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """ Node module """
 
+
 class Node:
+
     """ Declares the Node class """
 
     def __init__(self, data, next_node=None) -> None:
@@ -50,7 +52,6 @@ class SinglyLinkedList:
             if temp is not None:
                 string += "\n"
         return string
-
 
     def sorted_insert(self, value):
         """
