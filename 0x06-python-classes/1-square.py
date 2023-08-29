@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""1-square.py"""
+"""1-square.py""
+
 
 class Square:
-    """ Declares a square class """
-    def __init__(self, size):
-        """class shindou
-        """
+    """This is an empty class square"""
+    def __init__(self, size=None):
         self.__size = size
