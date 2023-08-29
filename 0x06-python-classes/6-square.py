@@ -4,18 +4,20 @@ class Square:
     """6-square.py"""
 
     def __init__(self, size=0, position=(0, 0)):
-    """ class init."""
+        """ class init."""
         if type(size) is not int:
             raise TypeError('size must be an integer')
         if size < 0:
             raise ValueError('size must be >= 0')
 
         if not isinstance(position, tuple) or len(position) != 2 \
-                or not isinstance(position[0], int) or not isinstance(position[1], int) \
+                or not isinstance(position[0], int) \
+                or not isinstance(position[1], int) \
                 or position[0] < 0 or position[1] < 0:
-             raise TypeError('position must be a tuple of 2 positive integers')
-         self.size = size
-         self.position = position
+            raise TypeError('position must be a tuple of 2 positive integers')
+
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -23,7 +25,8 @@ class Square:
 
     @size.setter
     def size(self, size):
-    """class size"""
+
+        """class size"""
         if type(size) is not int:
             raise TypeError('size must be an integer')
         if size < 0:
@@ -36,26 +39,31 @@ class Square:
 
     @position.setter
     def position(self, position):
-      """class positive"""
-      if not isinstance(position, tuple) or len(position) != 2 \
-                or not isinstance(position[0], int) or not isinstance(position[1], int) \
+
+        """class positive"""
+        if not isinstance(position, tuple) or len(position) != 2 \
+                or not isinstance(position[0], int) \
+                or not isinstance(position[1], int) \
                 or position[0] < 0 or position[1] < 0:
             raise TypeError('position must be a tuple of 2 positive integers')
-      self.__position = position
 
+        self.__position = position
 
     def __check_tuple(self, position):
-    """class tuple"""
+
+        """class tuple"""
         if type(position) is tuple:
             return True
         return False
 
     def area(self):
-    """class area"""
+
+        """class area"""
         return self.__size ** 2
 
     def my_print(self):
-    """class print"""
+
+        """class print"""
         if self.__size == 0:
             print()
             return None
