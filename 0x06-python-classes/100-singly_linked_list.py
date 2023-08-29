@@ -74,4 +74,4 @@ class SinglyLinkedList:
                 return
             past = future
             future = future.next_node
-        past.next_node = Node(value)  
+        past.next_node = Node(value)
