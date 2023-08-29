@@ -1,13 +1,16 @@
 #!/usr/bin/python3
+"""Task3_square"""
+
+
 class Square:
-    """ A class
-    """
+    """This is a class square"""
     def __init__(self, size=0):
-        """ square object
-        """
-        if not isinstance(size, int):
+        if type(size) is not int:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = int(size)
+        self.__size = size
+
+    def area(self):
+        """area square"""
+        return self.__size ** 2
