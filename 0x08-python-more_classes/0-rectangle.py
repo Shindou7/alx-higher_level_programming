@@ -2,7 +2,7 @@
 """class rectangle
 """
 
+
 class Rectangle:
-    """my_rectangle
-    """
+    """ my_rectangle """
     pass
