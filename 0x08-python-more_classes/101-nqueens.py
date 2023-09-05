@@ -13,30 +13,31 @@ def print_solution(board):
     solution = []
     for row, col in enumerate(board):
         solution.append([row, col])
-    print(solution)
+    return solution
 
 
 def solve_n_queens(size):
     if size < 4:
-        print("N must be at least 4")
-        sys.exit(2)
+        print("N must be at least 4", file=sys.stderr)
+        sys.exit(1)
 
     board = [-1] * size
 
     def place_queen(row):
         if row == size:
-            print_solution(board)
+            solutions.append(print_solution(board))
             return
         for col in range(size):
             if is_safe(board, row, col):
                 board[row] = col
                 place_queen(row + 1)
+    solutions = [] 
     place_queen(0)
 
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print("Usage: nqueens N")
+        print("Usage: nqueens N", file=sys.stderr)
         sys.exit(1)
 
     try:
@@ -44,7 +45,7 @@ if __name__ == '__main__':
         if size < 4:
             raise ValueError
     except ValueError:
-        print("N must be a positive integer")
+        print("N must be a positive integer", file=sys.stderr)
         sys.exit(1)
 
     solve_n_queens(size)
