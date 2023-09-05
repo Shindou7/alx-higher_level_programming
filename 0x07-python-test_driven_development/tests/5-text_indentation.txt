@@ -1,0 +1,7 @@
+# Test cases for the text_indentation function
+
+# Test case 1: A simple text with ., ?, and : characters
+>>> text_indentation("Hello there. How are you doing? I hope you're well.")
+Hello there.
+How are you doing?
+I hope you're well.
