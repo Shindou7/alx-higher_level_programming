@@ -5,8 +5,9 @@
 import unittest
 from max_integer import max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
-  """ TestMaxIntege max_integer function"""
+    """ TestMaxIntege max_integer function"""
 
     def test_empty_list(self):
         result = max_integer([])
@@ -51,6 +52,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_list_with_mixed_types(self):
         with self.assertRaises(TypeError):
             max_integer([1, "two", 3, "four"])
+
 
 if __name__ == "__main__":
     unittest.main()

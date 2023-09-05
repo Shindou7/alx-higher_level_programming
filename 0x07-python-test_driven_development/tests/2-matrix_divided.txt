@@ -1,4 +1,14 @@
-# Test cases for the matrix_divided function
+The ``2-matrix_divided`` module
+============================
 
->>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
-[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+Using ``matrix_divided``
+---------------------
+
+Importing function from the module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Dividing a matrix by 3:
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
