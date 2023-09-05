@@ -1,0 +1,7 @@
+# Test cases for the print_square function
+
+>>> print_square(4)
+####
+####
+####
+####
