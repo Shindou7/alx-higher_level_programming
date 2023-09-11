@@ -20,6 +20,6 @@ class MyInt(int):
 
     def __ne__(self, other):
         """
-        Method that returns == check 
+        Method that returns == check
         """
         return self.num == other
