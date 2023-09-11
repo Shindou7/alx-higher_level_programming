@@ -5,8 +5,7 @@ Module 7-base_geometry.py
 
 
 class BaseGeometry:
-   """ Empty class """
-
+    """ Empty class """
     def area(self):
         """not implemented"""
         raise Exception("area() is not implemented")
