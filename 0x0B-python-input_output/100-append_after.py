@@ -10,7 +10,7 @@ def append_after(filename="", search_string="", new_string=""):
     Function that appends a new line when a string is found
     """
     with open(filename, mode="r+", encoding="utf-8") as f:
-        new_write= ""
+        new_write = ""
         for line in f:
             new_write += line
             if search_string in line:
