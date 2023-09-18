@@ -11,11 +11,15 @@ from contextlib import redirect_stdout
 from models import square as s
 Square = s.Square
 
+
 class TestPep8(unittest.TestCase):
     def test_pep8(self):
         style = pep8.StyleGuide(quiet=False)
-        errors = style.check_files(["models/square.py", "tests/test_models/test_square.py"]).total_errors
+        errors = (style.check_files([
+            "models/square.py",
+            "tests/test_models/test_square.py"]).total_errors)
         self.assertEqual(errors, 0, 'Pep8 compliance check failed')
+
 
 class TestSquare(unittest.TestCase):
     def test_attributes(self):
@@ -98,6 +102,3 @@ class TestSquare(unittest.TestCase):
         square2 = Square(10, 10)
         square2.update(**sdic)
         self.assertEqual(str(square2), '[Square] (4) 2/3 - 1')
-
-if __name__ == '__main__':
-    unittest.main()

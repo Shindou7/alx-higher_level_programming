@@ -9,6 +9,7 @@ import pep8
 from models import rectangle
 Rectangle = rectangle.Rectangle
 
+
 class TestPep8(unittest.TestCase):
     def test_pep8_compliance(self):
         style = pep8.StyleGuide(quiet=False)
@@ -16,6 +17,7 @@ class TestPep8(unittest.TestCase):
         files = ["models/rectangle.py", "tests/test_models/test_rectangle.py"]
         errors += style.check_files(files).total_errors
         self.assertEqual(errors, 0, 'Pep8 compliance check failed')
+
 
 class TestRectangle(unittest.TestCase):
     def test_attributes(self):
@@ -116,6 +118,3 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(10, 10)
         r2.update(**rdic)
         self.assertEqual(str(r2), '[Rectangle] (5) 3/4 - 1/2')
-
-if __name__ == '__main__':
-    unittest.main()

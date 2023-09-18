@@ -13,6 +13,7 @@ from models import rectangle
 Base = base.Base
 Rectangle = rectangle.Rectangle
 
+
 class TestPep8(unittest.TestCase):
     def test_pep8_compliance(self):
         style = pep8.StyleGuide(quiet=False)
@@ -20,6 +21,7 @@ class TestPep8(unittest.TestCase):
         files = ["models/base.py", "tests/test_models/test_base.py"]
         errors += style.check_files(files).total_errors
         self.assertEqual(errors, 0, 'Pep8 compliance check failed')
+
 
 class TestBase(unittest.TestCase):
     def setUp(self):
@@ -104,12 +106,12 @@ class TestBase(unittest.TestCase):
         self.assertIsNot(rectangle_instance, new_rectangle)
 
     def test_save_to_file(self):
-        rectangle1 = Rectangle(10, 7, 2, 8, 99)
-        rectangle2 = Rectangle(2, 4, 2, 2, 98)
-        Rectangle.save_to_file([rectangle1, rectangle2])
+        rect1 = Rectangle(10, 7, 2, 8, 99)
+        rect2 = Rectangle(2, 4, 2, 2, 98)
+        Rectangle.save_to_file([rect1, rect2])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(
-                json.dumps([rectangle1.to_dictionary(), rectangle2.to_dictionary()]),
+                json.dumps([rect1.to_dictionary(), rect2.to_dictionary()]),
                 file.read())
 
     def test_save_to_file_with_none(self):
