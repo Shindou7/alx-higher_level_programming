@@ -19,7 +19,6 @@ class Base:
     """ Class Base """
     __nb_objects = 0
 
-
     def __init__(self, id=None):
         """ Initializes instances id """
         if id is not None:
@@ -67,7 +66,6 @@ class Base:
         dummy.update(**dictionary)
         return dummy
 
-
     @classmethod
     def load_from_file(cls):
         filename = cls.__name__ + '.json'
@@ -84,10 +82,9 @@ class Base:
 
             return list_dic
 
-
     @classmethod
     def save_to_file_csv(cls, list_objs):
-      """ Method that saves a CSV file """
+        """ Method that saves a CSV file """
         filename = cls.__name__ + ".csv"
         with open(filename, 'w', newline='') as f:
             writer = csv.writer(f)
@@ -97,8 +94,6 @@ class Base:
                 if cls.__name__ == "Square":
                     writer.writerow([o.id, o.size, o.x, o.y])
 
-
-   
     @classmethod
     def load_from_file_csv(cls):
         objs = []
@@ -131,13 +126,12 @@ class Base:
 
         return objs
 
-  def draw(list_rectangles, list_squares):
-    """Draw Rectangles and Squares using the turtle module.
-    """
-    turt = turtle.Turtle()
-    turt.screen.bgcolor("#b7312c")
-    turt.pensize(3)
-    turt.shape("turtle")
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module"""
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#b7312c")
+        turt.pensize(3)
+        turt.shape("turtle")
 
     def draw_shape(shape, color):
         turt.showturtle()
