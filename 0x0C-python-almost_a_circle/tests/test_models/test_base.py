@@ -77,6 +77,10 @@ class TestBase(unittest.TestCase):
     def test_from_json_string(self):
         json_str = '[{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},\
                     {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}]'
+
+        dict1 = {"id": 1, "width": 2, "height": 3, "x": 4, "y": 5}
+        dict2 = {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}
+
         json_list = Base.from_json_string(json_str)
         self.assertTrue(type(json_str) == str)
         self.assertTrue(type(json_list) == list)
