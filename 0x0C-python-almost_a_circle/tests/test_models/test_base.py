@@ -65,14 +65,14 @@ class TestBase(unittest.TestCase):
     def test_to_json_string_with_none(self):
         json_str = Base.to_json_string([None])
         self.assertTrue(type(json_str) == str)
-        self.assertEqual(json_str, "[]")
+        self.assertEqual(json_str, "[null]")
 
     def test_to_json_string_with_empty_dict(self):
         empty_dict = dict()
         json_str = Base.to_json_string([empty_dict])
         self.assertTrue(len(empty_dict) == 0)
         self.assertTrue(type(json_str) == str)
-        self.assertEqual(json_str, "[]")
+        self.assertEqual(json_str, "[{}]")
 
     def test_from_json_string(self):
         json_str = '[{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},\
