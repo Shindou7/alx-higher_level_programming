@@ -7,8 +7,8 @@ import unittest
 import pep8
 import json
 import os
-from models import base
-from models import rectangle
+from models.base import Base
+from models.rectangle import Rectangle
 
 Base = base.Base
 Rectangle = rectangle.Rectangle
