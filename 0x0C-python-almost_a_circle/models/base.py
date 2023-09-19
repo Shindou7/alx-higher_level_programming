@@ -96,18 +96,18 @@ class Base:
                 if cls.__name__ == "Square":
                     writer.writerow([o.id, o.size, o.x, o.y])
 
+
+
     @classmethod
     def load_from_file_csv(cls):
         objs = []
         filename = cls.__name__ + ".csv"
-        fieldnames = ['id', 'width', 'height', 'size', 'x', 'y']
 
         with open(filename, 'r', newline='') as f:
-            reader = csv.DictReader(f, fieldnames=fieldnames)
+            reader = csv.DictReader(f)
 
             for row in reader:
-                # Create a dictionary based on class name
-                if cls.__name__ == "Rectangle":
+                if 'width' in row and 'height' in row:
                     dic = {
                         "id": int(row['id']),
                         "width": int(row['width']),
@@ -115,18 +115,20 @@ class Base:
                         "x": int(row['x']),
                         "y": int(row['y'])
                     }
-                elif cls.__name__ == "Square":
+                    o = cls.create(**dic)
+                    objs.append(o)
+                elif 'size' in row:
                     dic = {
                         "id": int(row['id']),
                         "size": int(row['size']),
                         "x": int(row['x']),
                         "y": int(row['y'])
                     }
-
-                o = cls.create(**dic)
-                objs.append(o)
+                    o = cls.create(**dic)
+                    objs.append(o)
 
         return objs
+
 
     @staticmethod
     def draw(list_rectangles, list_squares):
