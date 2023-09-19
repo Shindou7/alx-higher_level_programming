@@ -10,7 +10,6 @@ import pep8
 import json
 import os
 
-Rectangle = rectangle.Rectangle
 
 
 class TestPep8(unittest.TestCase):
