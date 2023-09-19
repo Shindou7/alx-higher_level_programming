@@ -3,12 +3,12 @@
 Unittest for Base Class
 """
 
+from models.base import Base
+from models.rectangle import Rectangle
 import unittest
 import pep8
 import json
 import os
-from models.base import Base
-from models.rectangle import Rectangle
 
 Base = base.Base
 Rectangle = rectangle.Rectangle
