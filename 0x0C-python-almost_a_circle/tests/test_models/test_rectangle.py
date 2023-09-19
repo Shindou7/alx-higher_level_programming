@@ -80,8 +80,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(Rectangle(8, 7, 0, 0, 12).area(), 56)
 
     def test_display_method(self):
-        with self.assertRaises(AttributeError):
-            pass
+        r = Rectangle(2, 3, 1, 1, 99)
+        expected_output = "\n ##\n ##\n ##\n"
+        with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            r.display()
+            self.assertEqual(mock_stdout.getvalue(), expected_output)
 
     def test_string_representation(self):
         r = Rectangle(1, 2, 3, 4, 5)
