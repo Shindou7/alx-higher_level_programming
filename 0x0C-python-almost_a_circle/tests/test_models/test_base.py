@@ -10,7 +10,6 @@ import pep8
 import json
 import os
 
-Base = base.Base
 Rectangle = rectangle.Rectangle
 
 
