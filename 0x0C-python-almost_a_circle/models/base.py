@@ -96,8 +96,6 @@ class Base:
                 if cls.__name__ == "Square":
                     writer.writerow([o.id, o.size, o.x, o.y])
 
-
-
     @classmethod
     def load_from_file_csv(cls):
         objs = []
@@ -128,7 +126,6 @@ class Base:
                     objs.append(o)
 
         return objs
-
 
     @staticmethod
     def draw(list_rectangles, list_squares):
