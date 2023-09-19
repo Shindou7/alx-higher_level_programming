@@ -13,6 +13,8 @@ class constructor: def __init__(self, id=None)
 
 import json
 import csv
+from os import path
+import turtle
 
 
 class Base:
@@ -133,7 +135,7 @@ class Base:
         turt.screen.bgcolor("#b7312c")
         turt.pensize(3)
         turt.shape("turtle")
-        
+
         def draw_shape(shape, color):
             turt.showturtle()
             turt.up()
