@@ -9,7 +9,7 @@ import unittest
 import pep8
 import json
 import os
-
+Base = base.Base
 
 
 class TestPep8(unittest.TestCase):
