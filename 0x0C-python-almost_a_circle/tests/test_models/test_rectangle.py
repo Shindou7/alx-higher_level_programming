@@ -4,10 +4,10 @@ Unittest for Rectangle Class
 """
 
 
+from models.rectangle import Rectangle
+from models.base import Base
 import unittest
 import pep8
-from models import Rectangle as rectangle
-from models import Base as base
 
 Base = base.Base
 Rectangle = rectangle.Rectangle
