@@ -6,6 +6,7 @@ Unittest for Rectangle Class
 
 from models.rectangle import Rectangle
 from models.base import Base
+from unittest import mock
 import unittest
 import pep8
 
