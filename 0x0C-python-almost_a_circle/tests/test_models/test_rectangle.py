@@ -6,7 +6,8 @@ Unittest for Rectangle Class
 
 import unittest
 import pep8
-from models import rectangle
+from models.rectangle import Rectangle
+from models.base import Base
 Rectangle = rectangle.Rectangle
 
 
