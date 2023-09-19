@@ -9,8 +9,7 @@ from models.base import Base
 import unittest
 import pep8
 
-Base = base.Base
-Rectangle = rectangle.Rectangle
+
 
 
 class TestPep8(unittest.TestCase):
