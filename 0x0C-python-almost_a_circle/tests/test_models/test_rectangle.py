@@ -9,6 +9,7 @@ from models.base import Base
 from unittest import mock
 import unittest
 import pep8
+import io
 
 
 class TestPep8(unittest.TestCase):
