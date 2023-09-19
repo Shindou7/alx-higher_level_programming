@@ -126,30 +126,29 @@ class Base:
 
         return objs
 
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Rectangles and Squares using the turtle module"""
         turt = turtle.Turtle()
         turt.screen.bgcolor("#b7312c")
         turt.pensize(3)
         turt.shape("turtle")
+        
+        def draw_shape(shape, color):
+            turt.showturtle()
+            turt.up()
+            turt.goto(shape.x, shape.y)
+            turt.down()
+            turt.color(color)
+            for i in range(2):
+                turt.forward(shape.width)
+                turt.left(90)
+                turt.forward(shape.height)
+                turt.left(90)
+            turt.hideturtle()
+        for rect in list_rectangles:
+            draw_shape(rect, "#ffffff")
+        for sq in list_squares:
+            draw_shape(sq, "#b5e3d8")
 
-    def draw_shape(shape, color):
-        turt.showturtle()
-        turt.up()
-        turt.goto(shape.x, shape.y)
-        turt.down()
-        turt.color(color)
-        for i in range(2):
-            turt.forward(shape.width)
-            turt.left(90)
-            turt.forward(shape.height)
-            turt.left(90)
-        turt.hideturtle()
-
-    for rect in list_rectangles:
-        draw_shape(rect, "#ffffff")
-
-    for sq in list_squares:
-        draw_shape(sq, "#b5e3d8")
-
-    turtle.exitonclick()
+        turtle.exitonclick()
