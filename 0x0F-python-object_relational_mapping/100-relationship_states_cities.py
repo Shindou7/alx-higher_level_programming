@@ -22,7 +22,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-
     new_s = State(name="California")
     new_c = City(name="San Francisco")
     new_s.cities.append(new_c)
