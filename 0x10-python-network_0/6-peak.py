@@ -1,25 +1,33 @@
 #!/usr/bin/python3
-""" Write a function that finds a peak in a list of unsorted integers """
+'''
+Returns peak unsorted list
+'''
+ret = int or None
 
 
-def find_peak(list_of_integers):
-    if list_of_integers == []:
+def find_peak(list_of_integers) -> ret:
+    '''
+    Finds a number
+    '''
+
+    listLen = len(list_of_integers)
+    if listLen == 0:
         return None
 
-    length = len(list_of_integers)
-    mid = int(length / 2)
-    li = list_of_integers
+    tmp = list_of_integers
+    i = 0
+    n = listLen - 1
 
-    if mid - 1 < 0 and mid + 1 >= length:
-        return li[mid]
-    elif mid - 1 < 0:
-        return li[mid] if li[mid] > li[mid + 1] else li[mid + 1]
-    elif mid + 1 >= length:
-        return li[mid] if li[mid] > li[mid - 1] else li[mid - 1]
+    if tmp[i] > tmp[i+1]:
+        return tmp[i]
+    if tmp[n] > tmp[n-1]:
+        return tmp[n]
 
-    if li[mid - 1] < li[mid] > li[mid + 1]:
-        return li[mid]
-
-    if li[mid + 1] > li[mid - 1]:
-        return find_peak(li[mid:])
-    return find_peak(li[:mid])
+    x = (i + n) // 2
+    if tmp[x-1] < tmp[x] and tmp[x+1] < tmp[x]:
+        return tmp[x]
+    if tmp[x] < tmp[x-1]:
+        return find_peak(tmp[i:x+1])
+    if tmp[x] < tmp[x+1]:
+        return find_peak(tmp[x:n+1])
+    return tmp[i]
