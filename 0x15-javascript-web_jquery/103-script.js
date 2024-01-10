@@ -13,7 +13,7 @@ $(document).ready(function () {
 });
 
 function showHello() {
-	const languageCode = $('#language_code').val();
+  const languageCode = $('#language_code').val();
 
   $.get(`https://www.fourtonfish.com/hellosalut/hello/?lang=${languageCode}`, function (data) {
     $('#hello').text(data.hello);
